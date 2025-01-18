@@ -38,7 +38,7 @@ python3 ModelCoverageTest.py --csv model_list.csv
 
 The test finished with two output files.
 - Add the new column 'status' with 'PASS' or 'FAILED' output from the compatiable test
-- model_list-[yyyymmdd].log for checking the detail of the test expecial for the error.
+- ml-[yyyymmdd].log for checking the detail of the test expecial for the error.
 
 
 Get help for the tool usage,
