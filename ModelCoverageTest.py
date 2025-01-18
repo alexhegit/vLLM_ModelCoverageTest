@@ -8,7 +8,7 @@ import pandas as pd
 from vllm import LLM, SamplingParams
 
 current_date = datetime.now().strftime('%Y%m%d')
-log_file = f"ml-{current_date}.log"
+log_file = f"mct-{current_date}.log"
 
 logging.basicConfig(filename=log_file, level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
