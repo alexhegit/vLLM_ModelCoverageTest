@@ -1,0 +1,5 @@
+﻿model_id,gpus
+facebook/opt-125m,"0"
+tiiuae/falcon-7b,"0"
+google/flan-t5-small,"0"
+openai-community/gpt2,"0"
