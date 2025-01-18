@@ -15,10 +15,9 @@ docker run -it --rm --network=host --device=/dev/kfd --device=/dev/dri --group-a
 
 ## Run in the container
 
-Export your HF Token for downloading models from Huggingface
-
+Login with your HF account for model downloading
 ```bash
-export HF_TOKEN=hf_***
+huggingface-cli login
 ```
 
 ### Clone this repo
@@ -65,3 +64,6 @@ tiiuae/falcon-7b,"0"
 google/flan-t5-small,"0"
 openai-community/gpt2,"0"
 ```
+
+### Comments
+1. Some model like LLama need to request access at first. You may check the error from the log if not have.
