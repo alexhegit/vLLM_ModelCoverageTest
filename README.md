@@ -65,6 +65,6 @@ google/flan-t5-small,"0"
 openai-community/gpt2,"0"
 ```
 
-### FAQs
+# FAQs
 1. Some model like LLama need to request access at first. You may check the error from the log if not have.
 2. You should try multiple tensor parallel if LLM is OOM with single GPU.
