@@ -10,7 +10,7 @@ Here we use `rocm/vllm-dev:20250112` as example. You should refer the commands b
 ```bash
 docker run rocm/vllm-dev:20250112
 
-docker run -it --network=host --device=/dev/kfd --device=/dev/dri --group-add=video --ipc=host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --shm-size 32G --hostname=vLLM-CT -v $PWD:/ws -w /ws rocm/vllm-dev:20250112 /bin/bash
+docker run -it --rm --network=host --device=/dev/kfd --device=/dev/dri --group-add=video --ipc=host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --shm-size 32G --hostname=vLLM-CT -v $PWD:/ws -w /ws rocm/vllm-dev:20250112 /bin/bash
 ```
 
 ## Run in the container
