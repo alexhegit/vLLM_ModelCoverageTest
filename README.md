@@ -1,5 +1,6 @@
 # vLLM_ModelCoverageTest
-A tool of model coverage test for vLLM
+A tool of model coverage test for vLLM. 
+It is out of BOX with rocm/vllm-dev docker image which have all dependcy pakages pre-installed.
 
 # Steps
 
