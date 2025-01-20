@@ -65,6 +65,17 @@ google/flan-t5-small,"0"
 openai-community/gpt2,"0"
 ```
 
+There are to output file for checking the test results.
+- [modle_list]_results.csv
+```
+# cat model_list_results.csv
+model_id,gpus,status
+facebook/opt-125m,"0",PASS
+...
+```
+- mt-yyyymmdd.log
+There is a prefix <vLLM-CMT> for quick filter out the log print by vLLM MCT. You should check the what happend in detail for the model run FAILED.
+
 # FAQs
 1. Some model like LLama need to request access at first. You may check the error from the log if not have.
 2. You should try multiple tensor parallel if LLM is OOM with single GPU.
