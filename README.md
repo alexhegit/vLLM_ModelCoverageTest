@@ -76,7 +76,7 @@ facebook/opt-125m,"0",PASS
 - mt-yyyymmdd.log
 There is a prefix <vLLM-CMT> for quick filter out the log print by vLLM MCT. You should check the what happend in detail for the model run FAILED.
 
-# FAQs
+# NOTES & FAQ
 1. Some model like LLama need to request access at first. You may check the error from the log if not have.
 2. You should try multiple tensor parallel if LLM is OOM with single GPU.
 3. Some model may run PASS with tp=1 but may failed with mulitplel tp. You clould use `vllm serve` test it for double confirm.
