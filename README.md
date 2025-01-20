@@ -64,6 +64,11 @@ tiiuae/falcon-7b,"0"
 google/flan-t5-small,"0"
 openai-community/gpt2,"0"
 ```
+Example CSV of MTP
+```
+model_id,gpus
+facebook/opt-125m,"0,1"
+```
 
 There are to output file for checking the test results.
 - [modle_list]_results.csv
