@@ -39,7 +39,7 @@ class InferenceEngine:
 
 def delete_model_cache():
     try:
-        cache_dir = os.path.expanduser("~/.cache/vllm")
+        cache_dir = os.path.expanduser("~/.cache/huggingface/hub/")
         if os.path.exists(cache_dir):
             shutil.rmtree(cache_dir)
             logging.info(f"<vLLM-CMT> Model cache directory deleted: {cache_dir}")
