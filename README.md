@@ -1,5 +1,5 @@
 # vLLM_ModelCoverageTest
-A tool to do the model coverage test for vLLM
+A tool of model coverage test for vLLM
 
 # Steps
 
