@@ -6,7 +6,7 @@ A tool of model coverage test for vLLM.
 
 - Out of BOX with rocm/vllm-dev docker image which have all dependcy pakages pre-installed.
 - Work for ROCm and CUDA
-- CSV file in with bach model and gpus allocated
+- CSV file in with bacth model in list and gpus allocated
 - CSV file out with test results [PASS|FAILED]
 - Log file out with <vLLM-CMT> prefix in line for debugging
 - Support TP and Multiple TP by set `gpus` in the input model_list CSV
