@@ -21,13 +21,13 @@ class InferenceEngine:
             
             os.environ["CUDA_VISIBLE_DEVICES"] = ",".join(map(str, gpus))
             tp = len(gpus)
-            
+            logging.info(f"<vLLM-CMT> Inference Model {model_id}, TP {tp}")
             llm = LLM(model=model_id,
                       tensor_parallel_size=tp,
                       trust_remote_code=True,
                       gpu_memory_utilization=0.99,
                       load_format="dummy"
-                     )                     )
+                     )
             prompts = ["The capital of France is"]
             outputs = llm.generate(prompts, SamplingParams(temperature=0.8, top_p=0.9))
             if not outputs or len(outputs) == 0:
