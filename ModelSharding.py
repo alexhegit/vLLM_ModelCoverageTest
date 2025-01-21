@@ -26,10 +26,11 @@ def main():
             tp = int(math.ceil(model_total_mem_in_gb / (gpu_total_mem_in_gb - kv_margin_in_gb)))
             if tp != 1 and tp%2 == 1:
                 tp += 1
+            df.loc[index, 'model (GB)'] = model_total_mem_in_gb
         except:
-            tp = "check out dependancy"
+            tp = "check out dependency"
+            df.loc[index, 'model (GB)'] = "NA"
         df.loc[index, 'gpu (GB)'] = gpu_total_mem_in_gb
-        df.loc[index, 'model (GB)'] = model_total_mem_in_gb
         df.loc[index, 'tp recommend'] = tp
         base_name, ext = os.path.splitext(csv_file)
         output_csv_file = f"{base_name}_tpshard{ext}"
