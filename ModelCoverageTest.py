@@ -25,7 +25,9 @@ class InferenceEngine:
             llm = LLM(model=model_id,
                       tensor_parallel_size=tp,
                       trust_remote_code=True,
-                      gpu_memory_utilization=0.99,
+                      gpu_memory_utilization=0.95,
+                      max_model_len=1024,
+                      enforce_eager=True,
                       load_format="dummy"
                      )
             prompts = ["The capital of France is"]
