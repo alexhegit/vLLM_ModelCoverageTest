@@ -1,0 +1,206 @@
+model_id,gpus,model (GB),gpu (GB),tp recommend
+BAAI/Aquila-7B,3,13.620250701904297,191.984375,1.0
+BAAI/AquilaChat-7B,3,13.620250701904297,191.984375,1.0
+Snowflake/snowflake-arctic-base,3,449.1139682531357,191.984375,4.0
+Snowflake/snowflake-arctic-instruct,3,446.2428745031357,191.984375,4.0
+baichuan-inc/Baichuan2-13B-Chat,3,NA,191.984375,check out dependency
+baichuan-inc/Baichuan-7B,3,13.102062225341797,191.984375,1
+bigscience/bloom,3,328.28612518310547,191.984375,2
+bigscience/bloomz,3,328.28612518310547,191.984375,2
+facebook/bart-base,3,0.4035000801086426,191.984375,1
+facebook/bart-large-cnn,3,0.948516845703125,191.984375,1
+google/deplot,3,NA,191.984375,check out dependency
+microsoft/kosmos-2.5,3,NA,191.984375,check out dependency
+google/byt5-large,3,NA,191.984375,check out dependency
+google/byt5-small,3,NA,191.984375,check out dependency
+abacusai/Smaug-34B-v0.1,3,63.199864983558655,191.984375,1
+replit/replit-code-v1_5-3b,3,NA,191.984375,check out dependency
+replit/replit-code-v1_5-3b,3,NA,191.984375,check out dependency
+codellama/CodeLlama-7b-Instruct-hf,3,12.307262539863586,191.984375,1
+codellama/CodeLlama-13b-Instruct-hf,3,23.938918232917786,191.984375,1
+codellama/CodeLlama-34b-Instruct-hf,3,62.36476719379425,191.984375,1
+LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct,3,4.968554899096489,191.984375,1
+LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct,3,14.562999844551086,191.984375,1
+LGAI-EXAONE/EXAONE-3.5-32B-Instruct,3,59.610612988471985,191.984375,1
+databricks/dbrx-instruct,3,NA,191.984375,check out dependency
+THUDM/chatglm2-6b,3,5.81479075551033,191.984375,1
+THUDM/chatglm3-6b,3,5.81479075551033,191.984375,1
+facebook/wmt19-ru-en,3,0.6064682006835938,191.984375,1
+CohereForAI/c4ai-command-r-v01,3,NA,191.984375,check out dependency
+CohereForAI/c4ai-command-r7b-12-2024,3,NA,191.984375,check out dependency
+databricks/dbrx-base,3,243.96919345855713,191.984375,2
+databricks/dbrx-instruct,3,NA,191.984375,check out dependency
+Deci/DeciLM-7B,3,13.244640350341797,191.984375,1
+Deci/DeciLM-7B-instruct,3,13.244640350341797,191.984375,1
+deepseek-ai/deepseek-llm-67b-base,3,124.02636337280273,191.984375,1
+deepseek-ai/deepseek-llm-7b-chat,3,12.090312838554382,191.984375,1
+deepseek-ai/DeepSeek-V2,3,441.4463937282562,191.984375,4
+deepseek-ai/DeepSeek-V2-Chat,3,441.4463937282562,191.984375,4
+deepseek-ai/DeepSeek-V3-Base,3,1252.266920864582,191.984375,8
+deepseek-ai/DeepSeek-V3,3,1252.266920864582,191.984375,8
+LGAI-EXAONE/EXAONE-3.0-7.8B-Instruct,3,NA,191.984375,check out dependency
+tiiuae/falcon-7b,3,12.892728328704834,191.984375,1
+tiiuae/falcon-40b,3,76.93341422080994,191.984375,1
+tiiuae/falcon-rw-7b,3,13.99969482421875,191.984375,1
+tiiuae/falcon-mamba-7b,3,13.051279067993164,191.984375,1
+tiiuae/falcon-mamba-7b-instruct,3,13.051279067993164,191.984375,1
+google/recurrentgemma-2b,3,4.997220993973315,191.984375,1
+google/gemma-2b,3,4.668114185333252,191.984375,1
+google/gemma-7b,3,15.902676582336426,191.984375,1
+google/gemma-2-9b,3,17.21402883529663,191.984375,1
+google/gemma-2-27b,3,50.714483976364136,191.984375,1
+google/flan-t5-small,3,NA,191.984375,check out dependency
+google/flan-t5-large,3,NA,191.984375,check out dependency
+google/flan-t5-base,3,NA,191.984375,check out dependency
+THUDM/glm-4-9b-chat-hf,3,16.352523863315582,191.984375,1
+openai-community/gpt2,3,0.23251964896917343,191.984375,1
+openai-community/gpt2-xl,3,2.904206722974777,191.984375,1
+bigcode/starcoder,3,NA,191.984375,check out dependency
+bigcode/gpt_bigcode-santacoder,3,2.095508575439453,191.984375,1
+WizardLM/WizardCoder-15B-V1.0,3,28.907432556152344,191.984375,1
+EleutherAI/gpt-j-6b,3,10.886032104492188,191.984375,1
+nomic-ai/gpt4all-j,3,10.886032104492188,191.984375,1
+EleutherAI/gpt-neox-20b,3,37.71946062147617,191.984375,1
+EleutherAI/pythia-12b,3,21.590420939028263,191.984375,1
+OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5,3,21.586606241762638,191.984375,1
+databricks/dolly-v2-12b,3,21.586529947817326,191.984375,1
+stabilityai/stablelm-tuned-alpha-7b,3,14.095177233219147,191.984375,1
+ibm-granite/granite-3.0-2b-base,3,4.71905905008316,191.984375,1
+ibm-granite/granite-3.1-8b-instruct,3,15.219390988349915,191.984375,1
+ibm/PowerLM-3b,3,6.5416417717933655,191.984375,1
+ibm-granite/granite-3.0-1b-a400m-base,3,2.4859333634376526,191.984375,1
+ibm-granite/granite-3.0-3b-a800m-instruct,3,6.144481718540192,191.984375,1
+ibm/PowerMoE-3b,3,6.144473135471344,191.984375,1
+xai-org/grok-1,3,NA,191.984375,check out dependency
+parasail-ai/GritLM-7B-vllm,3,13.988780975341797,191.984375,1
+internlm/internlm-7b,3,13.669445037841797,191.984375,1
+internlm/internlm-chat-7b,3,13.669445037841797,191.984375,1
+internlm/internlm2-7b,3,14.412609100341797,191.984375,1
+internlm/internlm2-chat-7b,3,14.412609100341797,191.984375,1
+internlm/internlm3-8b-instruct,3,NA,191.984375,check out dependency
+inceptionai/jais-13b,3,NA,191.984375,check out dependency
+inceptionai/jais-13b-chat,3,NA,191.984375,check out dependency
+inceptionai/jais-30b-v3,3,NA,191.984375,check out dependency
+inceptionai/jais-30b-chat-v3,3,NA,191.984375,check out dependency
+ai21labs/AI21-Jamba-1.5-Large,3,NA,191.984375,check out dependency
+ai21labs/AI21-Jamba-1.5-Mini,3,NA,191.984375,check out dependency
+ai21labs/Jamba-v0.1,3,96.05721259117126,191.984375,1
+01-ai/Yi-34B,3,63.199864983558655,191.984375,1
+state-spaces/mamba-130m-hf,3,0.24053335189819336,191.984375,1
+state-spaces/mamba-790m-hf,3,1.4774580001831055,191.984375,1
+state-spaces/mamba-2.8b-hf,3,5.156445503234863,191.984375,1
+openbmb/MiniCPM-2B-sft-bf16,3,5.641349792480469,191.984375,1
+openbmb/MiniCPM-2B-dpo-bf16,3,5.641349792480469,191.984375,1
+openbmb/MiniCPM-S-1B-sft,3,2.7945539951324463,191.984375,1
+openbmb/MiniCPM3-4B,3,8.180602014064789,191.984375,1
+mistralai/Mistral-7B-v0.1,3,13.244640350341797,191.984375,1
+mistralai/Mistral-7B-Instruct-v0.1,3,13.244640350341797,191.984375,1
+mistralai/Mixtral-8x7B-v0.1,3,NA,191.984375,check out dependency
+mistralai/Mixtral-8x7B-Instruct-v0.1,3,87.2465934753418,191.984375,1
+mistral-community/Mixtral-8x22B-v0.1,3,263.31013774871826,191.984375,2
+mosaicml/mpt-7b,3,12.385261535644531,191.984375,1
+mosaicml/mpt-7b-storywriter,3,12.385261535644531,191.984375,1
+mosaicml/mpt-30b,3,55.79963493347168,191.984375,1
+nvidia/Minitron-8B-Base,3,13.454116880893707,191.984375,1
+allenai/OLMo-1B-hf,3,2.191896438598633,191.984375,1
+allenai/OLMo-7B-hf,3,12.446292877197266,191.984375,1
+allenai/OLMo2-7B-1124,3,NA,191.984375,check out dependency
+allenai/OLMoE-1B-7B-0924,3,12.696048855781555,191.984375,1
+allenai/OLMoE-1B-7B-0924-Instruct,3,12.696048855781555,191.984375,1
+facebook/opt-66b,3,122.41248321533203,191.984375,1
+facebook/opt-iml-max-30b,3,55.831932067871094,191.984375,1
+OrionStarAI/Orion-14B-Base,3,NA,191.984375,check out dependency
+OrionStarAI/Orion-14B-Chat,3,27.08406925201416,191.984375,1
+microsoft/phi-1_5,3,2.446327954530716,191.984375,1
+microsoft/phi-2,3,4.933329612016678,191.984375,1
+microsoft/Phi-3-mini-4k-instruct,3,7.117315292358398,191.984375,1
+microsoft/Phi-3-mini-128k-instruct,3,7.117315292358398,191.984375,1
+microsoft/Phi-3-medium-128k-instruct,3,26.00296974182129,191.984375,1
+microsoft/Phi-3-small-8k-instruct,3,14.659814953804016,191.984375,1
+microsoft/Phi-3-small-128k-instruct,3,14.542631268501282,191.984375,1
+microsoft/Phi-3.5-MoE-instruct,3,77.99482595920563,191.984375,1
+adept/persimmon-8b-base,3,15.503604084253311,191.984375,1
+adept/persimmon-8b-chat,3,15.503604084253311,191.984375,1
+Qwen/Qwen-7B,3,NA,191.984375,check out dependency
+Qwen/Qwen-7B-Chat,3,NA,191.984375,check out dependency
+Qwen/QwQ-32B-Preview,3,59.577287793159485,191.984375,1
+Qwen/Qwen2-7B-Instruct,3,13.170057892799377,191.984375,1
+Qwen/Qwen2-7B,3,13.170057892799377,191.984375,1
+Qwen/Qwen1.5-MoE-A2.7B,3,26.085639119148254,191.984375,1
+Qwen/Qwen1.5-MoE-A2.7B-Chat,3,26.085639119148254,191.984375,1
+stabilityai/stablelm-3b-4e1t,3,4.967051167041063,191.984375,1
+stabilityai/stablelm-base-alpha-7b-v2,3,12.848160743713379,191.984375,1
+bigcode/starcoder2-3b,3,5.6445101499557495,191.984375,1
+bigcode/starcoder2-7b,3,13.362478375434875,191.984375,1
+bigcode/starcoder2-15b,3,29.161389470100403,191.984375,1
+upstage/solar-pro-preview-instruct,3,41.239030838012695,191.984375,1
+TeleAI/TeleChat2-3B,3,NA,191.984375,check out dependency
+TeleAI/TeleChat2-7B,3,NA,191.984375,check out dependency
+TeleAI/TeleChat2-35B,3,NA,191.984375,check out dependency
+xverse/XVERSE-7B-Chat,3,13.722026824951172,191.984375,1
+xverse/XVERSE-13B-Chat,3,25.70737361907959,191.984375,1
+xverse/XVERSE-65B-Chat,3,124.32052040100098,191.984375,1
+BAAI/bge-base-en-v1.5,3,0.20393037796020508,191.984375,1
+BAAI/bge-multilingual-gemma2,3,17.21404218673706,191.984375,1
+intfloat/e5-mistral-7b-instruct,3,13.244640350341797,191.984375,1
+ssmits/Qwen2-7B-Instruct-embed-base,3,13.170057892799377,191.984375,1
+Alibaba-NLP/gte-Qwen2-7B-instruct,3,15.929613590240479,191.984375,1
+sentence-transformers/all-roberta-large-v1,3,0.6619129329919815,191.984375,1
+intfloat/multilingual-e5-large,3,1.0428810268640518,191.984375,1
+internlm/internlm2-1_8b-reward,3,3.1657209396362305,191.984375,1
+internlm/internlm2-7b-reward,3,13.706562042236328,191.984375,1
+peiyi9979/math-shepherd-mistral-7b-prm,3,13.244640469551086,191.984375,1
+ai21labs/Jamba-tiny-reward-dev,3,0.5311038494110107,191.984375,1
+jason9693/Qwen2.5-1.5B-apeach,3,2.87539541721344,191.984375,1
+cross-encoder/ms-marco-MiniLM-L-6-v2,3,0.042310476303100586,191.984375,1
+cross-encoder/quora-roberta-base,3,0.23217441141605377,191.984375,1
+BAAI/bge-reranker-v2-m3,3,1.0575866848230362,191.984375,1
+rhymes-ai/Aria,3,NA,191.984375,check out dependency
+Salesforce/blip2-opt-2.7b,3,7.215030670166016,191.984375,1
+Salesforce/blip2-opt-6.7b,3,14.824633598327637,191.984375,1
+facebook/chameleon-7b,3,NA,191.984375,check out dependency
+deepseek-ai/deepseek-vl2-tiny,3,NA,191.984375,check out dependency
+deepseek-ai/deepseek-vl2-small,3,NA,191.984375,check out dependency
+deepseek-ai/deepseek-vl2,3,NA,191.984375,check out dependency
+THUDM/glm-4v-9b,3,17.14815428853035,191.984375,1
+h2oai/h2ovl-mississippi-800m,3,NA,191.984375,check out dependency
+h2oai/h2ovl-mississippi-2b,3,NA,191.984375,check out dependency
+HuggingFaceM4/Idefics3-8B-Llama3,3,14.783329576253891,191.984375,1
+OpenGVLab/InternVL2_5-4B,3,NA,191.984375,check out dependency
+OpenGVLab/Mono-InternVL-2B,3,NA,191.984375,check out dependency
+OpenGVLab/InternVL2-4B,3,NA,191.984375,check out dependency
+llava-hf/llava-1.5-7b-hf,3,NA,191.984375,check out dependency
+TIGER-Lab/Mantis-8B-siglip-llama3,3,NA,191.984375,check out dependency
+llava-hf/llava-v1.6-mistral-7b-hf,3,NA,191.984375,check out dependency
+llava-hf/llava-v1.6-vicuna-7b-hf,3,NA,191.984375,check out dependency
+llava-hf/LLaVA-NeXT-Video-7B-hf,3,NA,191.984375,check out dependency
+llava-hf/llava-onevision-qwen2-7b-ov-hf,3,NA,191.984375,check out dependency
+llava-hf/llava-onevision-qwen2-0.5b-ov-hf,3,NA,191.984375,check out dependency
+openbmb/MiniCPM-V-2,3,NA,191.984375,check out dependency
+openbmb/MiniCPM-Llama3-V-2_5,3,15.93896159529686,191.984375,1
+openbmb/MiniCPM-V-2_6,3,NA,191.984375,check out dependency
+meta-llama/Llama-3.2-11B-Vision,3,NA,191.984375,check out dependency
+allenai/Molmo-7B-D-0924,3,14.940323829650879,191.984375,1
+nvidia/NVLM-D-72B,3,NA,191.984375,check out dependency
+google/paligemma-3b-pt-224,3,NA,191.984375,check out dependency
+google/paligemma-3b-mix-224,3,NA,191.984375,check out dependency
+google/paligemma2-3b-ft-docci-448,3,NA,191.984375,check out dependency
+google-bert/bert-large-cased,3,0.6213436126708984,191.984375,1
+google-bert/bert-large-uncased,3,0.6242542266845703,191.984375,1
+google-bert/bert-base-uncased,3,0.20393037796020508,191.984375,1
+google-bert/bert-base-cased,3,0.20174741744995117,191.984375,1
+microsoft/Phi-3-vision-128k-instruct,3,7.723686460405588,191.984375,1
+microsoft/Phi-3.5-vision-instruct,3,7.723686460405588,191.984375,1
+mistralai/Pixtral-12B-2409,3,NA,191.984375,check out dependency
+mistral-community/pixtral-12b,3,NA,191.984375,check out dependency
+Qwen/Qwen-VL,3,NA,191.984375,check out dependency
+Qwen/Qwen-VL-Chat,3,NA,191.984375,check out dependency
+Qwen/Qwen2-Audio-7B-Instruct,3,NA,191.984375,check out dependency
+Qwen/Qwen2-VL-7B-Instruct,3,13.170057892799377,191.984375,1
+fixie-ai/ultravox-v0_3,3,15.184249997138977,191.984375,1
+royokong/e5-v,3,NA,191.984375,check out dependency
+TIGER-Lab/VLM2Vec-Full,3,7.723686460405588,191.984375,1
+MrLight/dse-qwen2-2b-mrl-v1,3,2.87539541721344,191.984375,1
+albert/albert-base-v1,3,0.021766185760498047,191.984375,1
+albert/albert-base-v2,3,0.021766185760498047,191.984375,1
+albert/albert-xlarge-v2,3,0.10938739776611328,191.984375,1
