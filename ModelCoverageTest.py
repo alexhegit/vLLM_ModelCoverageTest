@@ -1,7 +1,6 @@
 import os
 import shutil
 from datetime import datetime
-import torch
 import logging
 from argparse import ArgumentParser
 import pandas as pd
@@ -43,16 +42,16 @@ class InferenceEngine:
             logging.error(f"<vLLM-CMT> Error during inference for model {model_id}: {e}")
             return "FAILED"
 
-def delete_model_cache():
-    try:
-        cache_dir = os.path.expanduser("~/.cache/huggingface/hub/")
-        if os.path.exists(cache_dir):
-            shutil.rmtree(cache_dir)
-            logging.info(f"<vLLM-CMT> Model cache directory deleted: {cache_dir}")
-        else:
-            logging.warning(f"<vLLM-CMT> Model cache directory does not exist: {cache_dir}")
-    except Exception as e:
-        logging.error(f"<vLLM-CMT> Error occurred while deleting model cache: {e}")
+    def delete_model_cache(self):
+        try:
+            cache_dir = os.path.expanduser("~/.cache/huggingface/hub/")
+            if os.path.exists(cache_dir):
+                shutil.rmtree(cache_dir)
+                logging.info(f"<vLLM-CMT> Model cache directory deleted: {cache_dir}")
+            else:
+                logging.warning(f"<vLLM-CMT> Model cache directory does not exist: {cache_dir}")
+        except Exception as e:
+            logging.error(f"<vLLM-CMT> Error occurred while deleting model cache: {e}")
 
 def main():
     parser = ArgumentParser(description="Run inference on models specified in a CSV file.")
@@ -86,7 +85,7 @@ def main():
             df.to_csv(output_csv_file, index=False)
             logging.info(f"<vLLM-CMT> Intermediate results saved to: {output_csv_file}")
             
-            delete_model_cache()
+            engine.delete_model_cache()
         
     except Exception as e:
         logging.error(f"<vLLM-CMT> Error occurred while processing CSV file or models: {e}")
