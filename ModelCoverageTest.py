@@ -5,6 +5,7 @@ import logging
 from argparse import ArgumentParser
 import pandas as pd
 from vllm import LLM, SamplingParams
+from multiprocessing import Process, Queue
 
 
 def setup_logging():
@@ -17,50 +18,49 @@ def setup_logging():
     )
 
 
-class InferenceEngine:
-    def __init__(self):
-        self.model_cache_dir = os.path.expanduser("~/.cache/huggingface/hub/")
+def infer_with_model(model_id, gpus, result_queue):
+    try:
+        if not isinstance(gpus, int) or gpus <= 0:
+            logging.error(f"<vLLM-CMT> Provided GPU count is invalid for model {model_id}: {gpus}")
+            result_queue.put("FAILED")
+            return
 
-    def infer_with_model(self, model_id, gpus):
-        try:
-            if not isinstance(gpus, int) or gpus <= 0:
-                logging.error(f"<vLLM-CMT> Provided GPU count is invalid for model {model_id}: {gpus}")
-                return "FAILED"
+        tp = gpus
+        logging.info(f"<vLLM-CMT> Inference Model {model_id}, TP {tp}")
+        llm = LLM(
+            model=model_id,
+            tensor_parallel_size=tp,
+            trust_remote_code=True,
+            gpu_memory_utilization=0.95,
+            max_model_len=1024,
+            enforce_eager=True,
+            load_format="dummy"
+        )
+        prompts = ["The capital of France is"]
+        outputs = llm.generate(prompts, SamplingParams(temperature=0.8, top_p=0.9))
+        if not outputs or len(outputs) == 0:
+            raise ValueError("<vLLM-CMT> No outputs received from the model.")
+        for output in outputs:
+            prompt = output.prompt
+            generated_text = output.outputs[0].text
+            logging.info(f"Prompt: {prompt!r}, Generated text: {generated_text!r}")
+        logging.info(f"<vLLM-CMT> Model {model_id} inference status: PASS")
+        result_queue.put("PASS")
+    except Exception as e:
+        logging.error(f"<vLLM-CMT> Error during inference for model {model_id}: {e}")
+        result_queue.put("FAILED")
 
-            tp = gpus
-            logging.info(f"<vLLM-CMT> Inference Model {model_id}, TP {tp}")
-            llm = LLM(
-                model=model_id,
-                tensor_parallel_size=tp,
-                trust_remote_code=True,
-                gpu_memory_utilization=0.95,
-                max_model_len=1024,
-                enforce_eager=True,
-                load_format="dummy"
-            )
-            prompts = ["The capital of France is"]
-            outputs = llm.generate(prompts, SamplingParams(temperature=0.8, top_p=0.9))
-            if not outputs or len(outputs) == 0:
-                raise ValueError("<vLLM-CMT> No outputs received from the model.")
-            for output in outputs:
-                prompt = output.prompt
-                generated_text = output.outputs[0].text
-                logging.info(f"Prompt: {prompt!r}, Generated text: {generated_text!r}")
-            logging.info(f"<vLLM-CMT> Model {model_id} inference status: PASS")
-            return "PASS"
-        except Exception as e:
-            logging.error(f"<vLLM-CMT> Error during inference for model {model_id}: {e}")
-            return "FAILED"
 
-    def delete_model_cache(self):
-        try:
-            if os.path.exists(self.model_cache_dir):
-                shutil.rmtree(self.model_cache_dir)
-                logging.info(f"<vLLM-CMT> Model cache directory deleted: {self.model_cache_dir}")
-            else:
-                logging.warning(f"<vLLM-CMT> Model cache directory does not exist: {self.model_cache_dir}")
-        except Exception as e:
-            logging.error(f"<vLLM-CMT> Error occurred while deleting model cache: {e}")
+def delete_model_cache():
+    try:
+        cache_dir = os.path.expanduser("~/.cache/huggingface/hub/")
+        if os.path.exists(cache_dir):
+            shutil.rmtree(cache_dir)
+            logging.info(f"<vLLM-CMT> Model cache directory deleted: {cache_dir}")
+        else:
+            logging.warning(f"<vLLM-CMT> Model cache directory does not exist: {cache_dir}")
+    except Exception as e:
+        logging.error(f"<vLLM-CMT> Error occurred while deleting model cache: {e}")
 
 
 def load_csv_file(csv_file):
@@ -90,18 +90,25 @@ def main():
 
     try:
         df = load_csv_file(args.csv)
-        engine = InferenceEngine()
+        results = []
 
         for index, row in df.iterrows():
             model_id = row['model_id']
             gpus = int(row['gpus'])
-            status = engine.infer_with_model(model_id, gpus)
-            logging.info(f"<vLLM-CMT> Model {model_id} inference status: {status}")
+
+            result_queue = Queue()
+
+            p = Process(target=infer_with_model, args=(model_id, gpus, result_queue))
+            p.start()
+            p.join()
+
+            status = result_queue.get()
+            results.append((model_id, gpus, status))
 
             df.loc[index, 'status'] = status
             save_results_to_csv(df, args.csv)
 
-            engine.delete_model_cache()
+            delete_model_cache()
 
     except Exception as e:
         logging.error(f"<vLLM-CMT> Error occurred while processing CSV file or models: {e}")
