@@ -71,9 +71,10 @@ The number of GPUS define in gpus is the value of -tp of vLLM inferfence engine 
 # cat model_list.csv
 model_id,gpus
 facebook/opt-125m,1
-tiiuae/falcon-7b,2
-google/flan-t5-small,4
-openai-community/gpt2,1
+meta-llama/Llama-3.2-11B-Vision,1
+deepseek-ai/DeepSeek-V2,8
+meta-llama/Llama-3.2-90B-Vision-Instruct,4
+microsoft/Phi-3-vision-128k-instruct,1
 ```
 
 
