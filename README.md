@@ -4,7 +4,7 @@ A tool of model coverage test for vLLM.
 
 # Key Features
 
-- Out of BOX with rocm/vllm-dev docker image which have all dependcy pakages pre-installed.
+- Out of Box with rocm/vllm-dev docker image which have all dependcy pakages pre-installed.
 - Work for ROCm and CUDA
 - CSV file in with bacth model in list and gpus allocated
 - CSV file out with test results [PASS|FAILED]
@@ -64,28 +64,25 @@ options:
   --csv CSV   Path to the CSV file containing model_id and gpus
 ```
 
-Here a example csv file defined the model list with model id(of Huggingface) and the GPU ID used for test.
+Here a example csv file defined the model list with model id(of Huggingface) and the number of GPUs used for test.
+The number of GPUS define in gpus is the value of -tp of vLLM inferfence engine for tensor parallel running.
 
 ```bash
 # cat model_list.csv
 model_id,gpus
-facebook/opt-125m,"0"
-tiiuae/falcon-7b,"0"
-google/flan-t5-small,"0"
-openai-community/gpt2,"0"
+facebook/opt-125m,1
+tiiuae/falcon-7b,2
+google/flan-t5-small,4
+openai-community/gpt2,1
 ```
-Example CSV of MTP
-```
-model_id,gpus
-facebook/opt-125m,"0,1"
-```
+
 
 There are to output file for checking the test results.
 - [modle_list]_results.csv
 ```
 # cat model_list_results.csv
 model_id,gpus,status
-facebook/opt-125m,"0",PASS
+facebook/opt-125m,1,PASS
 ...
 ```
 - mt-yyyymmdd.log
@@ -94,5 +91,4 @@ There is a prefix <vLLM-CMT> for quick filter out the log print by vLLM MCT. You
 # NOTES & FAQ
 1. Some model like LLama need to request access at first. You may check the error from the log if not have.
 2. You should try multiple tensor parallel if LLM is OOM with single GPU.
-3. Some model may run PASS with tp=1 but may failed with mulitplel tp. You clould use `vllm serve` test it for double confirm.
-4. The vLMM CMT will follow the process [download LLM | inference LLM | delete LLM] to save disk space and avoid run failed cuased by the continue enlarged .cache/huggingface/hub directory.
+3. The vLMM CMT will follow the process [download LLM | inference LLM | delete LLM] to save disk space and avoid run failed cuased by the continue enlarged .cache/huggingface/hub directory.
