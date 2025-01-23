@@ -15,11 +15,11 @@ logging.basicConfig(filename=log_file, level=logging.DEBUG,
 class InferenceEngine:
     def infer_with_model(self, model_id, gpus):
         try:
-            if not isinstance(gpus, list) or len(gpus) == 0:
-                logging.error(f"<vLLM-CMT> Provided GPUs list is invalid for model {model_id}: {gpus}")
+            if not isinstance(gpus, int) or gpus <= 0:
+                logging.error(f"<vLLM-CMT> Provided GPU count is invalid for model {model_id}: {gpus}")
                 return "FAILED"
               
-            tp = len(gpus)
+            tp = gpus  # Use the GPU count directly as tensor_parallel_size
             logging.info(f"<vLLM-CMT> Inference Model {model_id}, TP {tp}")
             llm = LLM(model=model_id,
                       tensor_parallel_size=tp,
@@ -32,7 +32,7 @@ class InferenceEngine:
             prompts = ["The capital of France is"]
             outputs = llm.generate(prompts, SamplingParams(temperature=0.8, top_p=0.9))
             if not outputs or len(outputs) == 0:
-                raise ValueError("<vLLM-CMT >No outtputs received from the model.")
+                raise ValueError("<vLLM-CMT> No outputs received from the model.")
             for output in outputs:
                 prompt = output.prompt
                 generated_text = output.outputs[0].text
@@ -74,7 +74,7 @@ def main():
         results = []
         for index, row in df.iterrows():
             model_id = row['model_id']
-            gpus = [int(gpu) for gpu in str(row['gpus']).split(',')]
+            gpus = int(row['gpus'])  # Parse GPU count directly
             status = engine.infer_with_model(model_id, gpus)
             logging.info(f"<vLLM-CMT> Model {model_id} inference status: {status}")
             results.append(status)
