@@ -18,8 +18,7 @@ class InferenceEngine:
             if not isinstance(gpus, list) or len(gpus) == 0:
                 logging.error(f"<vLLM-CMT> Provided GPUs list is invalid for model {model_id}: {gpus}")
                 return "FAILED"
-            
-            os.environ["CUDA_VISIBLE_DEVICES"] = ",".join(map(str, gpus))
+              
             tp = len(gpus)
             logging.info(f"<vLLM-CMT> Inference Model {model_id}, TP {tp}")
             llm = LLM(model=model_id,
